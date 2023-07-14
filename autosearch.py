@@ -4,7 +4,7 @@ import sys
 import pyautogui
 import time
 
-number = sys.argv[1]
+number = int(sys.argv[1])
 parameters = {
     "amount": number,
     "type": "multiple"
@@ -18,7 +18,7 @@ for question_data in questions_data:
   search_url = f"https://www.bing.com/search?q={question}"
   webbrowser.open(search_url)
 
-time.sleep(10)
-for i in range(int(number)):
+time.sleep(int(number/2))
+for i in range(number):
   pyautogui.hotkey('ctrl', 'w')
-  time.sleep(0.1)
+  time.sleep(0.2)
