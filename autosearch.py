@@ -7,6 +7,7 @@ import time
 number = int(sys.argv[1])
 parameters = {"amount": number, "type": "multiple"}
 
+
 def browse():
     response = requests.get(url="https://opentdb.com/api.php", params=parameters)
     questions_data = response.json()["results"]
@@ -16,7 +17,8 @@ def browse():
         search_url = f"https://www.bing.com/search?q={question}"
         webbrowser.open(search_url)
 
-for i in range(8):
+
+for i in range(9):
     browse()
     time.sleep(10)
     pyautogui.hotkey("ctrl", "shift", "m")
@@ -33,5 +35,5 @@ for i in range(8):
     pyautogui.hotkey("alt", "tab")
     time.sleep(0.5)
     pyautogui.hotkey("alt", "f4")
-    time.sleep(0.5)
+    time.sleep(4)
 pyautogui.hotkey("alt", "f4")
